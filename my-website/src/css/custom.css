@@ -35,11 +35,41 @@
 /* Sidebar styling */
 .menu__link {
   font-family: var(--tres-font-family-base);
+  font-size: 0.875rem;
 }
 
 .menu__link[href*="/Mutations/"],
 .menu__link[href*="/Queries/"] {
   font-family: var(--ifm-font-family-monospace);
+}
+
+/* Add line threading for nested items */
+.menu__list-item:not(:first-child) {
+  position: relative;
+}
+
+.menu__list-item:not(:first-child)::before {
+  content: '';
+  position: absolute;
+  left: -15px;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  background: var(--ifm-color-emphasis-300);
+}
+
+.menu__list-item:last-child::before {
+  height: 16px;
+}
+
+.menu__list-item .menu__list::before {
+  content: '';
+  position: absolute;
+  left: -15px;
+  top: 0;
+  width: 15px;
+  height: 1px;
+  background: var(--ifm-color-emphasis-300);
 }
 
 /* Arguments table styling */
