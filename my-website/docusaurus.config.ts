@@ -10,10 +10,10 @@ const config: Config = {
   favicon: 'img/Triangle.png',
 
   // Set the production url of your site here
-  url: 'https://tres-finance.github.io',
+  url: ' https://tres-finance.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/tres-docs/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
