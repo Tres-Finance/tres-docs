@@ -6,7 +6,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'Tres Finance Documentation',
-  tagline: 'Building the Future of Finance',
+  tagline: 'Manage Your Web3 Finance',
   favicon: 'img/Triangle.png',
 
   // Set the production url of your site here
