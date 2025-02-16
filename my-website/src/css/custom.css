@@ -123,8 +123,8 @@
 }
 
 [data-theme='dark'] .markdown table td:nth-child(2) {
-  background: #2D2D2D;
-  color: #E3E6FF;
+  background: #E3E6FF;
+  color: var(--ifm-color-primary-lighter);
 }
 
 /* Code block styling - light theme only */
