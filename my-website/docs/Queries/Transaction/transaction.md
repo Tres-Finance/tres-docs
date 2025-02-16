@@ -5,50 +5,50 @@ Retrieves transaction data with detailed filtering options and returns transacti
 
 ## GraphQL Schema
 ```graphql
-query transaction(
-  exportName: String
-  exportFormat: String
-  outputFormat: String
-  isPending: Boolean
-  currency: String
-  applyFilterToChildren: Boolean
-  limit: Int
-  offset: Int
-  ordering: String
-  before: String
-  after: String
-  first: Int
-  last: Int
-  children_SenderId_In: [ID]
-  children_RecipientId_In: [ID]
-  children_Recipient_Identifier_In: [String]
-  children_Sender_Identifier_In: [String]
-  children_OriginalRecipient_Identifier_In: [String]
-  children_OriginalSender_Identifier_In: [String]
-  children_BelongsTo_Identifier_In: [String]
-  decodedFunctionName: String
-  decodedFunctionName_In: [String]
-  classification_MethodId: String
-  classification_MethodId_In: [String]
-  classification_Action: String
-  classification_Action_In: [String]
-  classification_Activity: String
-  platform: String
-  platform_In: [String]
-  success: Boolean
-  success_In: [Boolean]
-  identifier: String
-  identifier_In: [String]
-  identifier_Contains: String
-  blockNumber: Int
-  blockNumber_Lte: Int
-  blockNumber_Gte: Int
-  children_Asset_Symbol_Icontains: String
-  methodId: String
-  methodId_In: [String]
-  methodId_Contains: String
-) {
-  transaction {
+query {
+  transaction(
+    exportName: String
+    exportFormat: String
+    outputFormat: String
+    isPending: Boolean
+    currency: String
+    applyFilterToChildren: Boolean
+    limit: Int
+    offset: Int
+    ordering: String
+    before: String
+    after: String
+    first: Int
+    last: Int
+    children_SenderId_In: [ID]
+    children_RecipientId_In: [ID]
+    children_Recipient_Identifier_In: [String]
+    children_Sender_Identifier_In: [String]
+    children_OriginalRecipient_Identifier_In: [String]
+    children_OriginalSender_Identifier_In: [String]
+    children_BelongsTo_Identifier_In: [String]
+    decodedFunctionName: String
+    decodedFunctionName_In: [String]
+    classification_MethodId: String
+    classification_MethodId_In: [String]
+    classification_Action: String
+    classification_Action_In: [String]
+    classification_Activity: String
+    platform: String
+    platform_In: [String]
+    success: Boolean
+    success_In: [Boolean]
+    identifier: String
+    identifier_In: [String]
+    identifier_Contains: String
+    blockNumber: Int
+    blockNumber_Lte: Int
+    blockNumber_Gte: Int
+    children_Asset_Symbol_Icontains: String
+    methodId: String
+    methodId_In: [String]
+    methodId_Contains: String
+  ) {
     pageInfo {
       hasNextPage
       hasPreviousPage
@@ -59,20 +59,14 @@ query transaction(
       identifier
       blockNumber
       success
-      platform
       methodId
       decodedFunctionName
+      platform
       children {
         id
         amount
         asset {
           symbol
-          decimals
-        }
-        sender {
-          identifier
-        }
-        recipient {
           identifier
         }
       }
@@ -89,7 +83,7 @@ query transaction(
 | exportFormat | String | Format of the export |
 | outputFormat | String | Format of the output |
 | isPending | Boolean | Filter for pending transactions |
-| currency | String | Currency to filter by |
+| currency | String | Currency filter |
 | applyFilterToChildren | Boolean | Apply filters to child transactions |
 | limit | Int | Maximum number of transactions to return |
 | offset | Int | Number of transactions to skip |
