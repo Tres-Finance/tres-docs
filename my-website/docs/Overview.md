@@ -16,7 +16,7 @@ Whether you need to:
 - Perform other administrative tasks  
 
 Our API has you covered.  
-
+### NOTE: there are more fields on some of the queries and mutations, for full ref, please see [Our GraphQL Playground](https://api.tres.finance/graphql)
 ## 2. GraphQL Support  
 
 Our API supports **GraphQL**, a powerful query language for your API.  
