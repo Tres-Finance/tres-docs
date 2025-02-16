@@ -1,0 +1,139 @@
+/* Base layout */
+html {
+  min-height: 100vh;
+  background: linear-gradient(145deg, var(--tres-bg-light), var(--tres-bg-accent));
+}
+
+html[data-theme='dark'] {
+  background: linear-gradient(145deg, var(--tres-dark), #000033);
+}
+
+/* Main content area */
+.main-wrapper {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  min-height: calc(100vh - var(--ifm-navbar-height));
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Fix scrolling overlap */
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+}
+
+.main-wrapper {
+  margin-top: var(--ifm-navbar-height);
+}
+
+.menu {
+  position: fixed;
+  top: var(--ifm-navbar-height);
+  bottom: 0;
+  overflow-y: auto;
+}
+
+html[data-theme='dark'] .main-wrapper {
+  background: rgba(14, 13, 82, 0.5);
+}
+
+/* Navbar styling */
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+  background: rgba(243, 230, 251, 0.65);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(217, 243, 238, 0.3);
+  transition: background-color 0.2s ease;
+}
+
+.navbar:hover {
+  background: rgba(243, 230, 251, 0.85);
+}
+
+html[data-theme='dark'] .navbar {
+  background: rgba(14, 13, 82, 0.65);
+  border-bottom: 1px solid rgba(147, 111, 255, 0.15);
+}
+
+html[data-theme='dark'] .navbar:hover {
+  background: rgba(14, 13, 82, 0.85);
+}
+
+/* Sidebar styling */
+.menu {
+  padding: 1rem;
+  font-family: var(--ifm-font-family-base);
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  border-right: 1px solid rgba(147, 111, 255, 0.1);
+}
+
+html[data-theme='dark'] .menu {
+  background: rgba(14, 13, 82, 0.5);
+  border-right: 1px solid rgba(147, 111, 255, 0.2);
+}
+
+.menu__link {
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.menu__link:hover {
+  background: rgba(147, 111, 255, 0.1);
+  color: var(--tres-primary);
+}
+
+.menu__link--active {
+  background: rgba(147, 111, 255, 0.2);
+  border-left: 2px solid var(--tres-primary);
+  color: var(--tres-primary);
+}
+
+/* API field highlighting */
+.api-method {
+  border-left: 3px solid var(--field-highlight-border);
+  background: var(--field-highlight-bg);
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 0 6px 6px 0;
+  transition: all 0.2s ease;
+}
+
+.api-method:hover {
+  background: rgba(147, 111, 255, 0.15);
+}
+
+.api-method--query { --field-highlight-border: var(--tres-accent); }
+.api-method--mutation { --field-highlight-border: var(--tres-primary); }
+
+/* Code blocks */
+.prism-code {
+  background: rgba(14, 13, 82, 0.6) !important;
+  border: 1px solid rgba(147, 111, 255, 0.2);
+}
+
+/* Typography improvements */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.markdown > h2 {
+  border-bottom: 1px solid rgba(147, 111, 255, 0.2);
+  padding-bottom: 0.5rem;
+}
+
+/* Fix scrolling overlap */
+.navbar-sidebar {
+  position: fixed;
+  top: 0;
+  z-index: 3;
+}
