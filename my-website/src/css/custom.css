@@ -123,8 +123,8 @@
 }
 
 [data-theme='dark'] .markdown table td:nth-child(2) {
-  background: rgb(20, 83, 45);
-  color: rgb(74, 222, 128);
+  background: var(--ifm-color-primary-darkest);
+  color: var(--ifm-color-primary-lighter);
 }
 
 /* Code block styling - light theme only */
