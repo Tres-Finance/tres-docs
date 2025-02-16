@@ -1,6 +1,7 @@
 import type {ReactNode} from 'react';
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
 
 type FeatureItem = {
@@ -43,10 +44,11 @@ const FeatureList: FeatureItem[] = [
 ];
 
 function Feature({title, imgSrc, description}: FeatureItem) {
+  const imageUrl = useBaseUrl(imgSrc);
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
-        <img src={imgSrc} className={styles.featureSvg} alt={title} />
+        <img src={imageUrl} className={styles.featureSvg} alt={title} />
       </div>
       <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>
