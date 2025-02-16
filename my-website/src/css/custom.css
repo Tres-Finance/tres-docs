@@ -50,19 +50,21 @@
   position: relative;
 }
 
-/* Only show thread lines for folders with children */
+/* Only show thread lines for expanded folders */
 .menu__list-item:has(> .menu__list) {
   position: relative;
 }
 
-.menu__list-item:has(> .menu__list)::before {
+/* Thread line for expanded folders */
+.menu__list-item:has(> a[aria-expanded="true"])::before {
   content: '';
   position: absolute;
   left: -15px;
   top: 12px;
   height: calc(100% - 12px);
   width: 1px;
-  background: var(--ifm-color-emphasis-300);
+  background: rgb(229, 231, 235);
+  transition: opacity 0.2s ease;
 }
 
 .menu__list .menu__list {
@@ -70,14 +72,27 @@
   position: relative;
 }
 
-.menu__list .menu__list::before {
+/* Horizontal connector for expanded folders */
+.menu__list-item:has(> a[aria-expanded="true"]) > .menu__list::before {
   content: '';
   position: absolute;
   left: -15px;
   top: 0;
   width: 15px;
   height: 1px;
-  background: var(--ifm-color-emphasis-300);
+  background: rgb(229, 231, 235);
+  transition: opacity 0.2s ease;
+}
+
+/* Dark theme thread lines */
+[data-theme='dark'] .menu__list-item:has(> a[aria-expanded="true"])::before,
+[data-theme='dark'] .menu__list-item:has(> a[aria-expanded="true"]) > .menu__list::before {
+  background: rgb(75, 85, 99);
+}
+
+/* Remove thread lines for leaf items */
+.menu__list-item:not(:has(> .menu__list))::before {
+  display: none;
 }
 
 /* Remove margin for leaf items */
@@ -99,35 +114,31 @@
 .markdown table td:nth-child(2) {
   padding: 8px;
   white-space: nowrap;
-}
-
-.markdown table td:nth-child(2) {
   font-family: var(--ifm-font-family-monospace);
   font-size: 0.875rem;
+  color: rgb(22, 101, 52);
+  background: rgb(240, 253, 244);
+  border-radius: 4px;
+  padding: 4px 8px;
+  display: table-cell;
   position: relative;
-  display: inline-flex;
-  align-items: center;
 }
 
 .markdown table td:nth-child(2)::before {
   content: '[';
   margin-right: 2px;
+  color: inherit;
 }
 
 .markdown table td:nth-child(2)::after {
   content: ']';
   margin-left: 2px;
+  color: inherit;
 }
 
-.markdown table td:nth-child(2) > span {
-  background: rgb(246, 248, 250);
-  border-radius: 4px;
-  padding: 4px 8px;
-  display: inline-block;
-}
-
-[data-theme='dark'] .markdown table td:nth-child(2) > span {
-  background: var(--ifm-code-background);
+[data-theme='dark'] .markdown table td:nth-child(2) {
+  background: rgb(20, 83, 45);
+  color: rgb(74, 222, 128);
 }
 
 /* Code block styling - light theme only */
