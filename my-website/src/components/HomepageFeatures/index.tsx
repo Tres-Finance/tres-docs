@@ -22,7 +22,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Secure and Reliable',
-    Svg: require('@site/static/img/Triangle.png').default,
+    Svg: require('@site/static/img/logo.png').default,
     description: (
       <>
         Built on robust infrastructure with security at its core, ensuring your
