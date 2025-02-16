@@ -30,6 +30,7 @@
   --ifm-color-primary-lighter: #DFECFF;
   --ifm-color-primary-lightest: #DFECFF;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-code-background: #1e1e1e;
 }
 
 /* Sidebar styling */
@@ -49,11 +50,11 @@
   position: relative;
 }
 
-.menu__list-item {
+/* Only show thread lines for folders with children */
+.menu__list-item:has(> .menu__list) {
   position: relative;
 }
 
-/* Only show thread lines for folders */
 .menu__list-item:has(> .menu__list)::before {
   content: '';
   position: absolute;
@@ -61,7 +62,7 @@
   top: 12px;
   height: calc(100% - 12px);
   width: 1px;
-  background: #e5e7eb;
+  background: var(--ifm-color-emphasis-300);
 }
 
 .menu__list .menu__list {
@@ -76,7 +77,12 @@
   top: 0;
   width: 15px;
   height: 1px;
-  background: #e5e7eb;
+  background: var(--ifm-color-emphasis-300);
+}
+
+/* Remove margin for leaf items */
+.menu__list-item:not(:has(> .menu__list)) {
+  margin-left: 0;
 }
 
 /* Arguments table styling */
@@ -98,23 +104,30 @@
 .markdown table td:nth-child(2) {
   font-family: var(--ifm-font-family-monospace);
   font-size: 0.875rem;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
 }
 
-/* Type value block styling */
 .markdown table td:nth-child(2)::before {
   content: '[';
+  margin-right: 2px;
 }
 
 .markdown table td:nth-child(2)::after {
   content: ']';
+  margin-left: 2px;
 }
 
-.markdown table td:nth-child(2) {
+.markdown table td:nth-child(2) > span {
   background: rgb(246, 248, 250);
   border-radius: 4px;
   padding: 4px 8px;
-  margin: 4px 0;
   display: inline-block;
+}
+
+[data-theme='dark'] .markdown table td:nth-child(2) > span {
+  background: var(--ifm-code-background);
 }
 
 /* Code block styling - light theme only */
