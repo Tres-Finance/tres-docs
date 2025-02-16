@@ -69,7 +69,7 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'My Site',
+      title: 'Docs',
       logo: {
         alt: 'My Site Logo',
         src: 'img/logo.svg',
@@ -77,14 +77,14 @@ const config: Config = {
       items: [
         {
           type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          sidebarId: 'APIs',
           position: 'left',
-          label: 'Tutorial',
+          label: 'APIs',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
+
         {
-          href: 'https://github.com/facebook/docusaurus',
-          label: 'GitHub',
+          href: 'https://tres.finance/',
+          label: 'Tres Finance',
           position: 'right',
         },
       ],
