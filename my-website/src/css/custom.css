@@ -112,28 +112,14 @@
 
 /* Type column styling */
 .markdown table td:nth-child(2) {
-  padding: 8px;
+  padding: 4px 8px;
   white-space: nowrap;
   font-family: var(--ifm-font-family-monospace);
   font-size: 0.875rem;
   color: rgb(22, 101, 52);
   background: rgb(240, 253, 244);
   border-radius: 4px;
-  padding: 4px 8px;
   display: table-cell;
-  position: relative;
-}
-
-.markdown table td:nth-child(2)::before {
-  content: '[';
-  margin-right: 2px;
-  color: inherit;
-}
-
-.markdown table td:nth-child(2)::after {
-  content: ']';
-  margin-left: 2px;
-  color: inherit;
 }
 
 [data-theme='dark'] .markdown table td:nth-child(2) {
