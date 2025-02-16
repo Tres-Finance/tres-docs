@@ -45,13 +45,12 @@
   color: #666;
 }
 
-/* Add line threading for nested items */
+/* Thread line styling */
 .menu__list {
   position: relative;
 }
 
-/* Only show thread lines for expanded folders */
-.menu__list-item:has(> .menu__list) {
+.menu__list-item {
   position: relative;
 }
 
@@ -65,11 +64,6 @@
   width: 1px;
   background: rgb(229, 231, 235);
   transition: opacity 0.2s ease;
-}
-
-.menu__list .menu__list {
-  margin-left: 15px;
-  position: relative;
 }
 
 /* Horizontal connector for expanded folders */
@@ -88,6 +82,12 @@
 [data-theme='dark'] .menu__list-item:has(> a[aria-expanded="true"])::before,
 [data-theme='dark'] .menu__list-item:has(> a[aria-expanded="true"]) > .menu__list::before {
   background: rgb(75, 85, 99);
+}
+
+/* Nested list spacing */
+.menu__list .menu__list {
+  margin-left: 15px;
+  position: relative;
 }
 
 /* Remove thread lines for leaf items */
