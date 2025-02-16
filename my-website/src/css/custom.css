@@ -35,12 +35,13 @@
 /* Sidebar styling */
 .menu__link {
   font-family: var(--tres-font-family-base);
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
 }
 
 .menu__link[href*="/Mutations/"],
 .menu__link[href*="/Queries/"] {
   font-family: var(--ifm-font-family-monospace);
+  color: var(--ifm-color-success);
 }
 
 /* Add line threading for nested items */
