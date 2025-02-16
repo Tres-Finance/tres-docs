@@ -30,6 +30,7 @@
   --ifm-color-primary-lighter: #DFECFF;
   --ifm-color-primary-lightest: #DFECFF;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-code-background: #1e1e1e;
 }
 
 /* Sidebar styling */
@@ -41,46 +42,89 @@
 .menu__link[href*="/Mutations/"],
 .menu__link[href*="/Queries/"] {
   font-family: var(--ifm-font-family-monospace);
-  color: var(--ifm-color-success);
+  color: #666;
 }
 
-/* Add line threading for nested items */
-.menu__list-item:not(:first-child) {
+/* Thread line styling */
+.menu__list {
   position: relative;
 }
 
-.menu__list-item:not(:first-child)::before {
+.menu__list-item {
+  position: relative;
+}
+
+/* Thread line for expanded folders */
+.menu__list-item:has(> a[aria-expanded="true"])::before {
   content: '';
   position: absolute;
   left: -15px;
-  top: 0;
-  height: 100%;
+  top: 12px;
+  height: calc(100% - 12px);
   width: 1px;
-  background: var(--ifm-color-emphasis-300);
+  background: rgb(229, 231, 235);
+  transition: opacity 0.2s ease;
 }
 
-.menu__list-item:last-child::before {
-  height: 16px;
-}
-
-.menu__list-item .menu__list::before {
+/* Horizontal connector for expanded folders */
+.menu__list-item:has(> a[aria-expanded="true"]) > .menu__list::before {
   content: '';
   position: absolute;
   left: -15px;
   top: 0;
   width: 15px;
   height: 1px;
-  background: var(--ifm-color-emphasis-300);
+  background: rgb(229, 231, 235);
+  transition: opacity 0.2s ease;
+}
+
+/* Dark theme thread lines */
+[data-theme='dark'] .menu__list-item:has(> a[aria-expanded="true"])::before,
+[data-theme='dark'] .menu__list-item:has(> a[aria-expanded="true"]) > .menu__list::before {
+  background: rgb(75, 85, 99);
+}
+
+/* Nested list spacing */
+.menu__list .menu__list {
+  margin-left: 15px;
+  position: relative;
+}
+
+/* Remove thread lines for leaf items */
+.menu__list-item:not(:has(> .menu__list))::before {
+  display: none;
+}
+
+/* Remove margin for leaf items */
+.menu__list-item:not(:has(> .menu__list)) {
+  margin-left: 0;
 }
 
 /* Arguments table styling */
 .markdown table th:first-child {
-  color: var(--ifm-color-primary);
+  color: inherit;
 }
 
 .markdown table td:nth-child(2) {
-  color: var(--ifm-color-success);
   font-family: var(--ifm-font-family-monospace);
+  white-space: nowrap;
+}
+
+/* Type column styling */
+.markdown table td:nth-child(2) {
+  padding: 4px 8px;
+  white-space: nowrap;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.875rem;
+  color: rgb(22, 101, 52);
+  background: rgb(240, 253, 244);
+  border-radius: 4px;
+  display: table-cell;
+}
+
+[data-theme='dark'] .markdown table td:nth-child(2) {
+  background: rgb(20, 83, 45);
+  color: rgb(74, 222, 128);
 }
 
 /* Code block styling - light theme only */
