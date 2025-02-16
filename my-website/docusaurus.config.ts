@@ -66,7 +66,7 @@ const config: Config = {
       title: 'Tres Finance',
       logo: {
         alt: 'Tres Finance Logo',
-        src: 'img/logo.png',
+        src: 'img/logo.svg',
       },
       items: [
         {
