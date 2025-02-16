@@ -41,7 +41,7 @@
 .menu__link[href*="/Mutations/"],
 .menu__link[href*="/Queries/"] {
   font-family: var(--ifm-font-family-monospace);
-  color: var(--ifm-color-success);
+  color: #666;
 }
 
 /* Add line threading for nested items */
@@ -56,11 +56,7 @@
   top: 0;
   height: 100%;
   width: 1px;
-  background: var(--ifm-color-emphasis-300);
-}
-
-.menu__list-item:last-child::before {
-  height: 16px;
+  background: #e5e7eb;
 }
 
 .menu__list-item .menu__list::before {
@@ -70,16 +66,25 @@
   top: 0;
   width: 15px;
   height: 1px;
-  background: var(--ifm-color-emphasis-300);
+  background: #e5e7eb;
 }
 
 /* Arguments table styling */
 .markdown table th:first-child {
-  color: var(--ifm-color-primary);
+  color: inherit;
 }
 
 .markdown table td:nth-child(2) {
-  color: var(--ifm-color-success);
+  font-family: var(--ifm-font-family-monospace);
+}
+
+/* Type column styling */
+.markdown table td:nth-child(2) {
+  padding: 4px 8px;
+  background: var(--ifm-code-background);
+  border-radius: 4px;
+  display: inline-block;
+  margin: 4px 0;
   font-family: var(--ifm-font-family-monospace);
 }
 
