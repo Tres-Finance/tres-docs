@@ -45,11 +45,15 @@
 }
 
 /* Add line threading for nested items */
-.menu__list-item:not(:first-child) {
+.menu__list {
   position: relative;
 }
 
-.menu__list-item:not(:first-child)::before {
+.menu__list-item {
+  position: relative;
+}
+
+.menu__list-item::before {
   content: '';
   position: absolute;
   left: -15px;
@@ -59,14 +63,16 @@
   background: #e5e7eb;
 }
 
-.menu__list-item .menu__list::before {
-  content: '';
-  position: absolute;
-  left: -15px;
-  top: 0;
-  width: 15px;
-  height: 1px;
-  background: #e5e7eb;
+.menu__list-item:first-child::before {
+  top: 12px;
+}
+
+.menu__list-item:last-child::before {
+  height: 12px;
+}
+
+.menu__list .menu__list {
+  margin-left: 15px;
 }
 
 /* Arguments table styling */
@@ -76,16 +82,33 @@
 
 .markdown table td:nth-child(2) {
   font-family: var(--ifm-font-family-monospace);
+  white-space: nowrap;
 }
 
 /* Type column styling */
 .markdown table td:nth-child(2) {
-  padding: 4px 8px;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.markdown table td:nth-child(2) code {
+  font-family: var(--ifm-font-family-monospace);
   background: var(--ifm-code-background);
   border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 0.875rem;
   display: inline-block;
   margin: 4px 0;
-  font-family: var(--ifm-font-family-monospace);
+  position: relative;
+}
+
+/* Add brackets to type values */
+.markdown table td:nth-child(2) code::before {
+  content: '[';
+}
+
+.markdown table td:nth-child(2) code::after {
+  content: ']';
 }
 
 /* Code block styling - light theme only */
