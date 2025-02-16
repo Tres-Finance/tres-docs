@@ -6,25 +6,51 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #8690FF;
-  --ifm-color-primary-dark: #6B77FF;
-  --ifm-color-primary-darker: #505EFF;
-  --ifm-color-primary-darkest: #3545FF;
-  --ifm-color-primary-light: #A1A9FF;
-  --ifm-color-primary-lighter: #DFECFF;
-  --ifm-color-primary-lightest: #DFECFF;
+  /* Brand colors */
+  --tres-primary: #936FFF;
+  --tres-secondary: #3E20FF;
+  --tres-dark: #0E0D52;
+  --tres-accent: #06996D;
+  
+  /* Theme colors */
+  --ifm-color-primary: var(--tres-primary);
+  --ifm-color-primary-dark: var(--tres-secondary);
+  --ifm-color-primary-darker: var(--tres-dark);
+  --ifm-color-primary-darkest: #000033;
+  --ifm-color-primary-light: #A88DFF;
+  --ifm-color-primary-lighter: #BDABFF;
+  --ifm-color-primary-lightest: #D2C9FF;
+
+  /* Custom background */
+  --site-bg-gradient: linear-gradient(145deg, var(--tres-dark), var(--tres-secondary));
+  
+  /* Typography */
+  --ifm-font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
+  --ifm-heading-font-family: var(--ifm-font-family-base);
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  /* Custom field highlighting */
+  --field-highlight-bg: rgba(147, 111, 255, 0.1);
+  --field-highlight-border: var(--tres-primary);
+  --docusaurus-highlighted-code-line-bg: rgba(147, 111, 255, 0.1);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #8690FF;
-  --ifm-color-primary-dark: #6B77FF;
-  --ifm-color-primary-darker: #505EFF;
-  --ifm-color-primary-darkest: #3545FF;
-  --ifm-color-primary-light: #A1A9FF;
-  --ifm-color-primary-lighter: #DFECFF;
-  --ifm-color-primary-lightest: #DFECFF;
+  /* Dark mode colors */
+  --ifm-color-primary: var(--tres-primary);
+  --ifm-color-primary-dark: var(--tres-secondary);
+  --ifm-color-primary-darker: var(--tres-dark);
+  --ifm-color-primary-darkest: #000033;
+  --ifm-color-primary-light: #A88DFF;
+  --ifm-color-primary-lighter: #BDABFF;
+  --ifm-color-primary-lightest: #D2C9FF;
+
+  /* Dark mode background */
+  --site-bg-gradient: linear-gradient(145deg, #000033, var(--tres-dark));
+  
+  /* Dark mode field highlighting */
+  --field-highlight-bg: rgba(147, 111, 255, 0.15);
+  --field-highlight-border: var(--tres-primary);
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
