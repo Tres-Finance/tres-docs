@@ -23,7 +23,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Secure and Reliable',
-    imgSrc: '/img/logo.png',
+    imgSrc: '/img/Triangle.png',
     description: (
       <>
         Built on robust infrastructure with security at its core, ensuring your
