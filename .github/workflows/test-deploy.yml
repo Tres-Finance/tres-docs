@@ -3,7 +3,7 @@ name: Test deploy
 on:
   pull_request:
     branches:
-      - main
+      - master
 
 jobs:
   test-deploy:
@@ -16,11 +16,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: yarn
+          cache: npm
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: npm ci
         working-directory: my-website
       - name: Test build website
-        run: yarn build
+        run: npm run build
         working-directory: my-website
