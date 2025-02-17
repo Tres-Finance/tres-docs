@@ -62,7 +62,7 @@
   top: 32px;
   bottom: 0;
   width: 2px;
-  background: #666666;
+  background: #000000;
   transition: opacity 0.2s ease;
 }
 
@@ -74,7 +74,7 @@
   top: 0;
   width: 16px;
   height: 2px;
-  background: #666666;
+  background: #000000;
   transition: opacity 0.2s ease;
 }
 
