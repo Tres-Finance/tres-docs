@@ -1,4 +1,8 @@
-# Reconciliation Query
+---
+sidebar_label: 'reconciliation'
+sidebar_position: 1
+---
+# Reconciliation
 
 ## Description
 Retrieves reconciliation results filtered by IDs, asset names, and end date.

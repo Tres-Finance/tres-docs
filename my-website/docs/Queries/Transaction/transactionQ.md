@@ -1,4 +1,8 @@
-# Transaction Query
+---
+sidebar_label: 'transaction'
+sidebar_position: 1
+---
+# Transaction
 
 ## Description
 Retrieves transaction data with detailed filtering options and returns transaction information including assets, comments, and related financial details.
