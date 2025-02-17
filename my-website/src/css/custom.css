@@ -58,11 +58,11 @@
 .menu__list-item:has(> a[aria-expanded="true"])::before {
   content: '';
   position: absolute;
-  left: -15px;
-  top: 12px;
-  height: calc(100% - 12px);
-  width: 1px;
-  background: rgb(229, 231, 235);
+  left: -16px;
+  top: 32px;
+  bottom: 0;
+  width: 2px;
+  background: #666666;
   transition: opacity 0.2s ease;
 }
 
@@ -70,24 +70,19 @@
 .menu__list-item:has(> a[aria-expanded="true"]) > .menu__list::before {
   content: '';
   position: absolute;
-  left: -15px;
+  left: -16px;
   top: 0;
-  width: 15px;
-  height: 1px;
-  background: rgb(229, 231, 235);
+  width: 16px;
+  height: 2px;
+  background: #666666;
   transition: opacity 0.2s ease;
-}
-
-/* Dark theme thread lines */
-[data-theme='dark'] .menu__list-item:has(> a[aria-expanded="true"])::before,
-[data-theme='dark'] .menu__list-item:has(> a[aria-expanded="true"]) > .menu__list::before {
-  background: rgb(75, 85, 99);
 }
 
 /* Nested list spacing */
 .menu__list .menu__list {
-  margin-left: 15px;
+  margin-left: 16px;
   position: relative;
+  padding-top: 0;
 }
 
 /* Remove thread lines for leaf items */
@@ -98,6 +93,12 @@
 /* Remove margin for leaf items */
 .menu__list-item:not(:has(> .menu__list)) {
   margin-left: 0;
+}
+
+/* Dark theme thread lines */
+[data-theme='dark'] .menu__list-item:has(> a[aria-expanded="true"])::before,
+[data-theme='dark'] .menu__list-item:has(> a[aria-expanded="true"]) > .menu__list::before {
+  background: #8690FF;
 }
 
 /* Arguments table styling */
