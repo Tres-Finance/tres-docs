@@ -1,7 +1,9 @@
 name: Test deploy
+# Runs on all PR events to verify build
 
 on:
   pull_request:
+    types: [opened, synchronize, reopened]
     branches:
       - master
 
@@ -9,6 +11,9 @@ jobs:
   test-deploy:
     name: Test deployment
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
     steps:
       - uses: actions/checkout@v4
         with:
