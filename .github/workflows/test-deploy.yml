@@ -1,4 +1,5 @@
 name: Test deploy
+# Runs on all PR events to verify build
 
 on:
   pull_request:
