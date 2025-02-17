@@ -32,14 +32,14 @@ type PositionObjectType {
 | blockNumber | Int | Optional block number to query positions at |
 
 ## Return Fields
-| Name | Type | Description |
-|------|------|-------------|
-| walletIdentifier | String! | Identifier of the wallet |
-| displayName | String! | Display name of the position |
-| platform | Platform! | Platform where the position exists |
-| positionType | PositionType | Type of position (staking/LP/etc) |
-| blockNumber | Int | Block number of the position |
-| blockHeight | Int | Height of the block |
+| Name | Type | Descriptionn                                     |
+|------|------|--------------------------------------------------|
+| walletIdentifier | String! | Identifier of the wallet                         |
+| displayName | String! | Display name of the position                     |
+| platform | Platform! | Platform where the position exists               |
+| positionType | PositionType | Type of position (staking/LP/etc)                |
+| blockNumber | Int | Block number of the position                     |
+| blockHeight | Int | Height of the block                              |
 | children | [AssetBalanceChildObjectType]! | Array of asset balances associated with position |
-| extras | ExtraPositionDataObjectType | Additional position data |
-| id | String! | Unique identifier of the position |
+| extras | ExtraPositionDataObjectType | Additional position data                         |
+| id | String! | Unique identifier of the position                |
