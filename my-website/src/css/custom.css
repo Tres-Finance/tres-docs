@@ -54,28 +54,32 @@
   position: relative;
 }
 
-/* Thread line for expanded folders */
+/* Folding guide lines for expanded folders */
+.menu__list-item:has(> a[aria-expanded="true"]) {
+  position: relative;
+}
+
 .menu__list-item:has(> a[aria-expanded="true"])::before {
   content: '';
   position: absolute;
   left: -16px;
   top: 32px;
   bottom: 0;
-  width: 3px;
-  background: #333333;
-  transition: opacity 0.2s ease;
+  width: 0;
+  border-left: 2px solid #000000;
+  z-index: 1;
 }
 
 /* Horizontal connector for expanded folders */
-.menu__list-item:has(> a[aria-expanded="true"]) > .menu__list::before {
+.menu__list-item:has(> a[aria-expanded="true"]) > .menu__list > .menu__list-item::before {
   content: '';
   position: absolute;
   left: -16px;
-  top: 0;
+  top: 16px;
   width: 16px;
-  height: 3px;
-  background: #333333;
-  transition: opacity 0.2s ease;
+  height: 0;
+  border-top: 2px solid #000000;
+  z-index: 1;
 }
 
 /* Nested list spacing */
@@ -85,20 +89,22 @@
   padding-top: 0;
 }
 
-/* Remove thread lines for leaf items */
+/* Menu item spacing */
+.menu__list-item {
+  position: relative;
+  margin: 0;
+  padding: 4px 0;
+}
+
+/* Remove guide lines for leaf items */
 .menu__list-item:not(:has(> .menu__list))::before {
   display: none;
 }
 
-/* Remove margin for leaf items */
-.menu__list-item:not(:has(> .menu__list)) {
-  margin-left: 0;
-}
-
-/* Dark theme thread lines */
+/* Dark theme colors */
 [data-theme='dark'] .menu__list-item:has(> a[aria-expanded="true"])::before,
-[data-theme='dark'] .menu__list-item:has(> a[aria-expanded="true"]) > .menu__list::before {
-  background: #8690FF;
+[data-theme='dark'] .menu__list-item:has(> a[aria-expanded="true"]) > .menu__list > .menu__list-item::before {
+  border-color: #8690FF;
 }
 
 /* Arguments table styling */
