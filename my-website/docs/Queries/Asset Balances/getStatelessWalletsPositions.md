@@ -32,7 +32,7 @@ type PositionObjectType {
 | blockNumber | Int | Optional block number to query positions at |
 
 ## Return Fields
-| Name | Type | Descriptionn                                     |
+| Name | Type | Descriptionnn                                    |
 |------|------|--------------------------------------------------|
 | walletIdentifier | String! | Identifier of the wallet                         |
 | displayName | String! | Display name of the position                     |
