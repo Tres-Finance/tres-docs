@@ -20,44 +20,26 @@ type PositionObjectType {
   extras: ExtraPositionDataObjectType
   id: String!
 }
-
-enum Platform {
-  EOS
-  VANAR
-  ONTOLOGY
-  POLKADOT
-  KUSAMA
-  ACALA
-  # ... [other platform values]
-}
-
-enum PositionType {
-  STAKING
-  DELEGATED_TO_ACCOUNT
-  LP
-  LENDING
-  BORROWING
-  VESTING
-  AIRDROP
-}
-
-type AssetBalanceChildObjectType {
-  assetIdentifier: String!
-  walletIdentifier: String!
-  state: BalanceState!
-  errorCode: StatelessBalanceErrorCodes!
-  originalAmount: Decimal
-  amount: Decimal
-  symbol: String
-  balanceSource: StatlessBalanceSource!
-}
 ```
 
 ## Arguments
 | Name | Type | Description |
 |------|------|-------------|
-| walletIdentifiers | [String]! | Array of wallet identifiers to query |
-| platform | Platform! | Platform enum value to specify the blockchain platform |
-| timestamp | DateTime | Optional timestamp for the query |
-| application | String | Optional application identifier |
-| blockNumber | Int | Optional block number to query at specific blockchain height |
+| walletIdentifiers | [String]! | Array of wallet identifiers to query positions for |
+| platform | Platform! | Platform to query positions from |
+| timestamp | DateTime | Optional timestamp to query positions at |
+| application | String | Optional application filter |
+| blockNumber | Int | Optional block number to query positions at |
+
+## Return Fields
+| Name | Type | Description |
+|------|------|-------------|
+| walletIdentifier | String! | Identifier of the wallet |
+| displayName | String! | Display name of the position |
+| platform | Platform! | Platform where the position exists |
+| positionType | PositionType | Type of position (staking/LP/etc) |
+| blockNumber | Int | Block number of the position |
+| blockHeight | Int | Height of the block |
+| children | [AssetBalanceChildObjectType]! | Array of asset balances associated with position |
+| extras | ExtraPositionDataObjectType | Additional position data |
+| id | String! | Unique identifier of the position |
