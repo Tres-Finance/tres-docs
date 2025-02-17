@@ -34,7 +34,7 @@ jobs:
           path: my-website/build
 
   deploy:
-    name: Deploy to GitHub Pages
+    name: deploy
     needs: build
 
     # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
