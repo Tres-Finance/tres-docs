@@ -1,4 +1,8 @@
-# Admin Query
+---
+sidebar_label: 'admin'
+sidebar_position: 1
+---
+# Admin
 
 ## Description
 Retrieves a list of users within an organization and organization settings
