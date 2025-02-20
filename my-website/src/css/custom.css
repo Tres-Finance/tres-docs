@@ -39,8 +39,8 @@
   font-size: 0.8125rem;
 }
 
-.menu__link[href*="/Mutations/"],
-.menu__link[href*="/Queries/"] {
+.menu__link[href*="/Mutations/"][href$=".md"],
+.menu__link[href*="/Queries/"][href$=".md"] {
   font-family: var(--ifm-font-family-monospace);
   color: #666;
 }
